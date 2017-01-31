@@ -301,3 +301,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+DevelopmentDashboardWeb/Web.Debug.config
+*.config
