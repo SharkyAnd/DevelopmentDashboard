@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevelopmentDashboardCore", "DevelopmentDashboardCore\DevelopmentDashboardCore.csproj", "{3609A27C-39AE-4388-9424-8B537BD3080B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevelopmentDashboardWeb", "DevelopmentDashboardWeb\DevelopmentDashboardWeb.csproj", "{68761013-EAC8-44D3-BB65-6A67A420C206}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database Scripts", "Database Scripts", "{BB4A672D-8B12-4FB0-85FA-744B3B395CAD}"
+	ProjectSection(SolutionItems) = preProject
+		ActivityMonitor.sql = ActivityMonitor.sql
+		db_01_Environments.sql = db_01_Environments.sql
+		db_02_GetGroupedIntervals.sql = db_02_GetGroupedIntervals.sql
+		db_03_GetGroupedIntervalsAdd.sql = db_03_GetGroupedIntervalsAdd.sql
+		db_04_SessionsArray.sql = db_04_SessionsArray.sql
+		db_05_ActivitySummaryView.sql = db_05_ActivitySummaryView.sql
+		db_06_GetUserGroupMatrix.sql = db_06_GetUserGroupMatrix.sql
+		db_07_GetMetricHistory.sql = db_07_GetMetricHistory.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3609A27C-39AE-4388-9424-8B537BD3080B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3609A27C-39AE-4388-9424-8B537BD3080B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3609A27C-39AE-4388-9424-8B537BD3080B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3609A27C-39AE-4388-9424-8B537BD3080B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68761013-EAC8-44D3-BB65-6A67A420C206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68761013-EAC8-44D3-BB65-6A67A420C206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68761013-EAC8-44D3-BB65-6A67A420C206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68761013-EAC8-44D3-BB65-6A67A420C206}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

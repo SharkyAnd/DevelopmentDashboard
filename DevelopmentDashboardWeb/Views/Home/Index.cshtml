@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Development Dashboard";
+}
+<link href="../../Content/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="../../Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../../Content/lobipanel.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/home/index.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/dx.webappjs.js" type="text/javascript"></script>
+<script src="../../Scripts/lobipanel.min.js" type="text/javascript"></script>
+<script src="~/Scripts/home/index.js" type="text/javascript"></script>
+<div class="container-fluid">
+    <h2 class="text-center">
+        Development Dashboard Main
+    </h2>
+</div>
+<div>
+    <b>Last update: </b><em id="last-update"></em>
+</div>
+<div id="buttons-panel" class="container-fluid" data-get-parameters="@Url.Action("GetActiveSessionsAdditionalParameters", "DataView")">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <button id="users" class="btn btn-default" type="submit" data-get-widget="@Url.Action("GetUsersJson", "Home")" data-save-options = "@Url.Action("SaveUsersWidgetOptions", "Home")"  data-get-parameters="@Url.Action("GetUsersWidgetOptions", "Home")">
+                Users</button>
+            <button id="last-10-sessions" class="btn btn-default" type="submit" data-get-widget="@Url.Action("GetLastSessionsJson", "Home")">
+                Last 10 sessions</button>
+            <button id="last-10-commits" class="btn btn-default" type="submit" data-get-widget="@Url.Action("GetLastCommitsJson", "Home")">
+                Last 10 commits</button>
+        </div>
+    </div>
+</div>
+<div id="lobipanel-multiple">
+    <div class="bs-example">
+        <div id="left-sortable" class="col-md-6 col-sm-6 col-lg-6">
+        </div>
+        <div id="right-sortable" class="col-md-6 col-sm-6 col-lg-6">
+        </div>
+    </div>
+</div>
+<div class="popup">
+</div>
+<div id="popup">
+</div>
+<script type="text/html" id="content_template">
+<div>Yellow Status Period</div>
+            <div id="yellow-status-spin" style="margin:3px 3px"></div>
+            <div>Red Status Period</div>
+            <div id="red-status-spin" style="margin:3px 3px">RedStatusSpin</div>
+            <div id="save"></div>
+</script>

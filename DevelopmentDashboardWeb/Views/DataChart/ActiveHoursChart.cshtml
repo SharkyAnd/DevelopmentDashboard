@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Development Dashboard - Active Hours Chart";
+}
+<link href="~/Content/session/ConnectedAndActive.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/knockout-3.4.0.js" type="text/javascript"></script>
+<script src="~/Scripts/dx.webappjs.js" type="text/javascript"></script>
+<script src="~/Scripts/dx.chartjs.js" type="text/javascript"></script>
+<div class="container">
+    <div class="row">
+        <div id="period" class="col-md-4">
+            <div>
+                From
+            </div>
+            <div id="from">
+            </div>
+            <div>
+                To
+            </div>
+            <div id="to">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div>
+                User names
+            </div>
+            <div id="user-names">
+            </div>
+            <div>
+                Aggregation interval
+            </div>
+            <div id="aggregation-interval">
+            </div>                       
+        </div>
+    </div>
+    <div class="row">
+        <div style="margin-top: 10px; margin-bottom: 10px" class="col-md-offset-3 col-md-1"
+             id="create-chart">
+        </div>
+    </div>
+</div>
+<div id="container" style="margin-top:20px;">
+    <div id="usersActiveHoursChart" data-get-source="@Url.Action("GetUsersActiveHoursJson", "DataChart")" data-get-parameters="@Url.Action("GetUsersActiveHoursParametersJson", "DataChart")">
+    </div>
+</div>
+<script src="~/Scripts/DataChart/users-active-hours.js" type="text/javascript"></script>

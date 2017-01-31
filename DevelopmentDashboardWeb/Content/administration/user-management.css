@@ -1,0 +1,4 @@
+﻿.bottomaligned {position:absolute; bottom:0;  margin-bottom:7px; left: 0;}
+  .bottomright {position:absolute; margin-bottom:17px; right: 0; bottom:10px;}
+  .bottomleft {position:absolute; margin-bottom:17px; bottom:10px;}
+  .fixedheight { height: 200px;  width: 243px;  position:relative; border:1px solid;}

@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Development Dashboard - Activity Summary";
+}
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/session/accordion.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/dx.webappjs.js" type="text/javascript"></script>
+@*<script src="../../Scripts/devextreme-modules/dx.module-core.debug.js" type="text/javascript"></script>
+<script src="../../Scripts/devextreme-modules/dx.module-framework.debug.js" type="text/javascript"></script>
+<script src="../../Scripts/devextreme-modules/dx.module-widgets-base.debug.js" type="text/javascript"></script>
+<script src="../../Scripts/devextreme-modules/dx.module-viz-core.debug.js" type="text/javascript"></script>
+<script src="../../Scripts/devextreme-modules/dx.module-widgets-web.debug.js" type="text/javascript"></script>*@
+<script src="~/Scripts/jszip.min.js" type="text/javascript"></script>
+<script src="../../Scripts/DataView/accordion.js" type="text/javascript"></script>
+<div id="gridSettings" class="accordion" data-get-parameters = "@Url.Action("ActivitySummaryGetAdditionalDataJson", "Summary")">
+    <div class="accordion-section">
+        <a class="accordion-section-title active" href="#accordion-1">Grid Settings: <i id="settings-string">
+        </i><i id="arrow" class="fa fa-angle-down"></i></a>
+        <div id="accordion-1" class="accordion-section-content container-fluid">
+            <div class="row">
+                <div id="period" class="col-md-4">
+                    <div>
+                        From</div>
+                    <div id="from">
+                    </div>
+                    <div>
+                        To</div>
+                    <div id="to">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        User names</div>
+                    <div id="user-names">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-5 col-md-1" id="create-grid">
+                </div>
+            </div>
+        </div>
+        <!--end .accordion-section-content-->
+    </div>
+    <!--end .accordion-section-->
+</div>
+<div class="container-fluid">
+    <div class="col-md-4" style="margin-top:10px;margin-bottom:10px;text-aligh:center">
+
+            Aggregation Interval   
+        <div id="aggregation-interval">
+        </div>
+    </div>
+</div>
+<div style:"margin-top:10px" id="activity-summary-grid" data-get-source = "@Url.Action("GetActivitySummaryJson", "Summary")">
+</div>
+<script src="~/Scripts/Summary/activity-summary.js" type="text/javascript"></script>

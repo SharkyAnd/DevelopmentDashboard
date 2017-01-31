@@ -1,0 +1,53 @@
+﻿<nav class="navbar navbar-default">
+    <div class="container">
+        <ul class="nav navbar-nav navbar-left">
+        <li><a href="@Url.Action("Index", "Home")" class="navbar-link">Main page</a></li>
+        @Html.SecurableMenu("View data", new List<MvcHtmlString>
+        {
+            Html.SecurableSubMenu("Sessions", new List<MvcHtmlString>
+                {
+                    Html.SecurableLink( "All", "Sessions", "DataView"),
+                    Html.SecurableLink("Active", "ActiveSessions", "DataView")
+                }
+            )
+        }, new List<MvcHtmlString>
+            {
+                Html.SecurableLink("Revisions", "Revisions", "DataView"),
+                Html.SecurableLink("Publications", "Publications", "DataView"),
+                Html.SecurableLink("Local builds", "LocalBuilds", "DataView")
+            }
+        )
+        @Html.SecurableMenu("Data charts", new List<MvcHtmlString>
+        {
+            Html.SecurableSubMenu("Sessions",new List<MvcHtmlString>
+            {
+                Html.SecurableLink("Connected and Active Users","ConnectedAndActive", "DataChart"),
+                Html.SecurableLink("Session Profile Statistics","SessionProfileStatistics", "DataChart"),
+                Html.SecurableLink("Users Active Hours","ActiveHoursChart", "DataChart")
+            })
+        })
+       
+        @Html.SecurableMenu("Summaries", null, new List<MvcHtmlString>
+        {
+            Html.SecurableLink("Activity Summary","ActivitySummary", "Summary"),
+            Html.SecurableLink("Code metrics history","MetricsHistory", "Summary")
+        })
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      @Html.SecurableMenu("Site administration", new List<MvcHtmlString>
+        {
+            Html.SecurableSubMenu("User Management", new List<MvcHtmlString>
+                {
+                    Html.SecurableLink( "Users and Groups", "UsersGroups", "Administration"),
+                    Html.SecurableLink("Users and Roles", "UsersRoles", "Administration")
+                }
+            )
+        }, new List<MvcHtmlString>
+            {
+                Html.SecurableLink("Applications settings", "Settings", "Administration")
+            }
+        )     
+        @Html.Action("UserLogin", "Home")
+      </ul>
+    </div>
+</nav>

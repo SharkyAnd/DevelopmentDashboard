@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Development Dashboard - All Sessions";
+}
+<script src="~/Scripts/dx.webappjs.js" type="text/javascript"></script>
+<script src="~/Scripts/DataView/common.js" type="text/javascript"></script>
+<script src="~/Scripts/dx.chartjs.js" type="text/javascript"></script>
+<script src="~/Scripts/DataView/sessions.js" type="text/javascript"></script>
+<h2 class="text-center">
+    Development Dashboard - Sessions
+</h2>
+<div id="btnGetChart" data-get-chart = "@Url.Action("GetSessionDetailJson", "DataView")">
+</div>
+<div id="gridContainer" data-get-source="@Url.Action("GetSessionsJson", "DataView")" >
+</div>
+<div class="popup">
+</div>
+<div id="popup">
+</div>
+<script type="text/html" id="content_template">
+        <div id="chartInPopup"></div>
+</script>

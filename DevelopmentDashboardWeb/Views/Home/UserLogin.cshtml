@@ -1,0 +1,12 @@
+﻿@model AuthenticationProvider.User
+
+@if (Model != null)
+{
+    <li><a href="@Url.Action("UserSettings", "Account",new {userName = Model.UserName != null ? Model.UserName : Model.Email})" class="navbar-link">@(Model.UserName != null ? Model.UserName : Model.Email)</a></li>
+    <li><a href="@Url.Action("LogOut", "Account")" class="navbar-link">Log out</a></li> 
+}
+else
+{
+    <li><a href="@Url.Action("LogIn", "Account")" class="navbar-link">Log In</a></li>
+    @*<li><a href="@Url.Action("Register", "Account")" class="navbar-link">Register</a></li>*@
+}

@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Development Dashboard - Users and Roles management";
+}
+<link href="~/Content/administration/user-management.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/dx.webappjs.js" type="text/javascript"></script>
+<script src="~/Scripts/Administration/users-management.js" type="text/javascript"></script>
+<script src="~/Scripts/Administration/roles-management.js" type="text/javascript"></script>
+<script src="~/Scripts/Administration/rules-management.js" type="text/javascript"></script>
+<script src="~/Scripts/Administration/users-roles-management.js" type="text/javascript"></script>
+<div id="crud-helpers" style="display:none" data-add-role="@Url.Action("AddNewRole", "Administration")" data-update-role="@Url.Action("UpdateRole", "Administration")"
+data-delete-role="@Url.Action("DeleteRole", "Administration")" data-add-user-role="@Url.Action("AddUserToRole", "Administration")" data-remove-user-role="@Url.Action("RemoveUserRole", "Administration")"
+ data-add-user="@Url.Action("AddNewUser", "Administration")" data-update-user="@Url.Action("UpdateUser", "Administration")"
+data-delete-user="@Url.Action("DeleteUser", "Administration")" data-send-confirmation="@Url.Action("SendConfirmationEmail", "Administration")"
+data-add-rule="@Url.Action("AddNewRule", "Administration")" data-update-rule="@Url.Action("UpdateRule", "Administration")"
+data-delete-rule="@Url.Action("DeleteRule", "Administration")">
+</div>
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Users and Roles matrix</div>
+        <div class="panel-body">
+            <div id="usersRolesGridContainer" data-get-source = "@Url.Action("GetUsersRolesMatrixJson", "Administration")" style="border-bottom:1px solid #CFCFCD;margin-bottom:5px;">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Users</div>
+                <div class="panel-body">
+                    <div id="addNewUser">
+                    </div>
+                    <div id="usersGridContainer" data-get-source = "@Url.Action("GetUsersJson", "Administration")" style="border:1px solid #CFCFCD">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Roles</div>
+                <div class="panel-body">
+                    <div id="addNewRole">
+                    </div>
+                    <div id="rolesGridContainer" data-get-source = "@Url.Action("GetUsersRolesJson", "Administration")" style="border:1px solid #CFCFCD">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Public access rules</div>
+                <div class="panel-body">
+                    <div id="addNewRule">
+                    </div>
+                    <div id="rulesGridContainer" data-get-source = "@Url.Action("GetPublicAccessRulesJson", "Administration")" style="border:1px solid #CFCFCD">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popup">
+</div>
+<div id="popup">
+</div>
+<script type="text/html" id="form_template" data-get-user="@Url.Action("GetUserDataJson", "Administration")" 
+data-get-role = "@Url.Action("GetRoleDataJson", "Administration")" data-get-additional = "@Url.Action("GetUsersRolesAdditionalDataJson", "Administration")">
+        <div id="formInPopup"></div>
+        
+        <div class="bottomleft" id="saveBtn"></div>
+        <div class="bottomright" id="cancelBtn"></div>
+        
+</script>
